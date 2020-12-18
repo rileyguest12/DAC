@@ -1,7 +1,6 @@
 """
     Author: Riley Guest
-    Company: FORO Energy
-    Scope: User Interface for data analysis
+    Scope: User Interface for data analysis, also be able to launch different software required for process this was used for
 
 """
 import matplotlib
@@ -51,7 +50,6 @@ def pspc():
         plt.xlabel("Data/Steps")
         plt.ylabel("Laser Power (mW)")
 
-
     files = glob.glob(r"InitialPowerCorrelation\*.txt")
     if not files:
         return directory_warning()
@@ -78,10 +76,8 @@ def pspc():
         plt.legend(loc=0)
         plt.savefig(r"Plots\PC_"+fname+".png")
 
-
 def close():
     sys.exit()
-
 
 def directory_warning():
     msg = QtWidgets.QMessageBox()
@@ -120,7 +116,6 @@ def thorLabs():
         subprocess.Popen(tlInstaller)
     else:
         subprocess.Popen(tlSoftware)
-
 
 def LBP2():
     newportSoftware = r"Newport\LBP2 Series\Spiricon.Version5.exe"
